@@ -1,0 +1,28 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: cimaverso
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-cimaverso}
+      POSTGRES_DB: cimaverso
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cimaverso"]
+      interval: 5s
+      retries: 10
+  api:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql+psycopg://cimaverso:${DB_PASSWORD:-cimaverso}@db:5432/cimaverso
+      JWT_SECRET: ${JWT_SECRET:-cambia-esta-clave-por-una-larga-y-aleatoria-0123456789}
+      STORAGE_DIR: /data/archivos
+    volumes: [archivos:/data/archivos]
+    depends_on:
+      db: { condition: service_healthy }
+  web:
+    build: ./frontend
+    ports: ["8080:80"]
+    depends_on: [api]
+volumes:
+  pgdata:
+  archivos:

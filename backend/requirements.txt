@@ -1,0 +1,10 @@
+litestar[standard]==2.25.0
+SQLAlchemy==2.1.9
+psycopg[binary]==3.3.9
+bcrypt==5.0.0
+PyJWT==2.15.0
+pypdf==6.17.0
+python-docx==1.2.0
+python-multipart==0.0.32
+pytest==9.1.1
+httpx==0.28.1
