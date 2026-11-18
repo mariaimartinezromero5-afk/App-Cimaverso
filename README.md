@@ -30,7 +30,7 @@ cd frontend && npm install && npm run dev      # http://localhost:5173
 | Rol | Correo |
 |---|---|
 | Gerente | gerente@cimaverso.co |
-| Desarrollador | laura@cimaverso.co · andres@cimaverso.co · camila@cimaverso.co · daniel@cimaverso.co |
+| Desarrollador |
 
 ## Pruebas
 ```bash
