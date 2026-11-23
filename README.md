@@ -26,11 +26,11 @@ litestar --app app.main:app run --port 8000
 cd frontend && npm install && npm run dev      # http://localhost:5173
 ```
 
-## Credenciales de demostración (clave `Cimaverso2026*`)
-| Rol | Correo |
-|---|---|
-| Gerente | gerente@cimaverso.co |
-| Desarrollador |
+## Credenciales de demostración
+| Rol | Correo | Contraseña
+|---|---|---|
+| Gerente | mariaimartinezromero5@gmail.com| Maria12345*
+| Desarrollador |  camila@gmail.com | Cimaverso2026*
 
 ## Pruebas
 ```bash
